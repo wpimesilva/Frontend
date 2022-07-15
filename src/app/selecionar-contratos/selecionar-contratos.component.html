@@ -1,0 +1,87 @@
+
+    <mat-card >
+        <mat-card-content fxLayout="row">
+          <table>
+            <thead>
+              <tr >
+                <th colspan="3">Dados do contrato</th>
+              </tr>
+              <tr>
+                <th>Valor Original</th>
+                <th>Valor Atualizado</th>
+                <th>Vencimento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td>{{contratos.valorContratoOriginal | currency:'BRL'}}</td>
+                <td>{{contratos.valorContratoAtualizado | currency:'BRL'}}</td>
+                <td>{{contratos.dataInicioDivida | date: 'dd/MM/yyyy'}}</td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th>Ofertas</th>
+              </tr>
+            </thead>
+          </table>
+          <br>
+          <table border="0">
+            <thead>
+              <tr>
+                <th colspan="3">À Vista</th>
+              </tr>
+              <tr>
+                <th>Percentual de Desconto</th>
+                <th>Valor Atualizado</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td>70%</td>
+                <td>{{contratosAVista.valorContratoAtualizado | currency:'BRL'}}</td>
+                <td><input type="radio" name="IdContrato" /></td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <br>
+          <table>
+            <thead>
+              <tr>
+                <th colspan="4">Parcelado</th>
+              </tr>
+              <tr>
+                <th>Percentual de Desconto</th>
+                <th>Valor Atualizado</th>
+                <th>Parcelas</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr >
+                <td>40%</td>
+                <td>{{contratosParcelado.valorContratoAtualizado | currency:'BRL'}}</td>
+                <td>48x</td>
+                <td><input type="radio" name="IdContrato" /></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button color="primary" mat-raised-button >
+                Renegociar
+            </button>
+
+        </mat-card-actions>
+    </mat-card>
+

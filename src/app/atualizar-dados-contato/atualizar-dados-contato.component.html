@@ -1,0 +1,46 @@
+<form [formGroup]="formAtualizarContato">
+  <mat-card >
+      <mat-card-content fxLayout="row">
+
+
+          <mat-form-field>
+              <mat-label>Nome</mat-label>
+              <input id="nomeContato" formControlName="nomeContato" matInput placeholder="Nome" type="text" />
+              <mat-error *ngIf="formAtualizarContato.controls['nomeContato'].hasError('required')">
+                  Nome é obrigatório
+              </mat-error>
+          </mat-form-field>
+          <br>
+          <!-- name -->
+          <mat-form-field>
+              <mat-label>E-mail</mat-label>
+              <input id="emailContato" formControlName="emailContato" matInput placeholder="E-mail" type="text" />
+              <mat-error *ngIf="formAtualizarContato.controls['emailContato'].hasError('required')">
+                  E-mail é obrigatório
+              </mat-error>
+
+          </mat-form-field>
+          <br>
+
+          <mat-form-field>
+            <mat-label>Telefone</mat-label>
+            <input id="telefoneContato" formControlName="telefoneContato" matInput placeholder="Telefone" type="text" />
+            <mat-error *ngIf="formAtualizarContato.controls['telefoneContato'].hasError('required')">
+                Telefone é obrigatório
+            </mat-error>
+
+
+          </mat-form-field>
+        <br>
+
+
+      </mat-card-content>
+
+      <mat-card-actions>
+          <button color="primary" mat-raised-button (click)="atualizarDadosContato()">
+              Prosseguir
+          </button>
+
+      </mat-card-actions>
+  </mat-card>
+</form>

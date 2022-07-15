@@ -1,0 +1,29 @@
+<form [formGroup]="formConsultarCPF">
+  <mat-card>
+      <mat-card-content fxLayout="row">
+
+
+
+              <mat-label>Informe seu CPF para consultar os contratos</mat-label>
+
+          <br>
+
+          <mat-form-field>
+            <input id="cpf" formControlName="cpf" matInput placeholder="CPF" type="text" />
+            <mat-error *ngIf="formConsultarCPF.controls['cpf'].hasError('required')">
+                CPF é obrigatório
+            </mat-error>
+          </mat-form-field>
+          <br>
+
+
+      </mat-card-content>
+
+      <mat-card-actions>
+          <button color="primary" mat-raised-button (click)="consultar()">
+              Consultar
+          </button>
+
+      </mat-card-actions>
+  </mat-card>
+</form>
